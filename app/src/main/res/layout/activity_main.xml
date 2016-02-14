@@ -1,0 +1,73 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="3dp"
+    tools:context=".MainActivity" >
+
+    <TextView
+        android:id="@+id/txtMsg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff00"
+        android:text="Choose Pizza Size" />
+
+    <Spinner
+        android:id="@+id/spinner1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_weight="3">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Vegetable toppings"/>
+        <CheckBox android:id="@+id/checkbox_v1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="mushroom"
+            android:onClick="onCheckboxClicked"/>
+        <CheckBox android:id="@+id/checkbox_v2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="spinach"
+            android:onClick="onCheckboxClicked"/>
+        <CheckBox android:id="@+id/checkbox_v3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="lettuce"
+            android:onClick="onCheckboxClicked"/>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Meat toppings"/>
+        <CheckBox android:id="@+id/checkbox_m1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pepperoni"
+            android:onClick="onCheckboxClicked"/>
+        <CheckBox android:id="@+id/checkbox_m2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sausage"
+            android:onClick="onCheckboxClicked"/>
+        <CheckBox android:id="@+id/checkbox_m3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Chicken"
+            android:onClick="onCheckboxClicked"/>
+    </LinearLayout>
+    <TextView
+        android:id="@+id/result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        android:layout_gravity="center"
+        android:text="50dp"/>
+</LinearLayout>
