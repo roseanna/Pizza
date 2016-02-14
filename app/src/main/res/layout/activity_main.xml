@@ -4,6 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="3dp"
+    android:id="@+id/ll"
     tools:context=".MainActivity" >
 
     <TextView
