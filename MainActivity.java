@@ -73,6 +73,7 @@ public class MainActivity extends Activity implements AdapterView.OnItemSelected
     public void onNothingSelected(AdapterView<?> parent) {
         // Do nothing
     }
+
     public void onCheckboxClicked(View view) {
 
         Log.i("oncheckbox", "clicked");
@@ -97,6 +98,11 @@ public class MainActivity extends Activity implements AdapterView.OnItemSelected
         Log.i("Meat", String.valueOf(mChosen));
         Log.i("Veggie", String.valueOf(vChosen));
         setText();
+    }
+
+
+    public void createCB(String[] array){
+
     }
 
     // setText calls calculate. Gets called whenever anything changes with
