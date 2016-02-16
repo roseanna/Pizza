@@ -8,6 +8,8 @@ import java.util.*;
 import android.util.Log;
 import android.app.Activity;
 
+import org.w3c.dom.Text;
+
 public class MainActivity extends Activity implements AdapterView.OnItemSelectedListener{
 
     TextView txtMsg;
@@ -20,7 +22,7 @@ public class MainActivity extends Activity implements AdapterView.OnItemSelected
     int vMult       = 1;
     int mMult       = 1;
     int total       = 0;
-
+    LinearLayout ll;
     String pSize    = "Small";
     String [] sizeOptions   = {"Small", "Medium", "Large"};
     String [] vegToppings   = {"Lettuce", "Spinach", "Mushroom"};
@@ -30,7 +32,7 @@ public class MainActivity extends Activity implements AdapterView.OnItemSelected
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        ll = (LinearLayout) findViewById(R.id.ll);
         txtMsg  = (TextView) findViewById(R.id.txtMsg);
         spinner = (Spinner)  findViewById(R.id.spinner1);
         result  = (TextView) findViewById(R.id.result);
@@ -45,6 +47,10 @@ public class MainActivity extends Activity implements AdapterView.OnItemSelected
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(this);
 
+//        createTV("Veggie Toppings");
+//        createCB(vegToppings);
+//        createTV("Meat Toppings");
+//        createCB(meatToppings);
     }
 
 
@@ -75,12 +81,8 @@ public class MainActivity extends Activity implements AdapterView.OnItemSelected
     }
 
     public void onCheckboxClicked(View view) {
-
         Log.i("oncheckbox", "clicked");
-        // Is the view now checked?
         boolean checked = ((CheckBox) view).isChecked();
-
-
         boolean isMeat = (view.getId() == R.id.checkbox_m1 || view.getId() == R.id.checkbox_m2 || view.getId() == R.id.checkbox_m3);
         boolean isVeg  = (view.getId() == R.id.checkbox_v1 || view.getId() == R.id.checkbox_v2 || view.getId() == R.id.checkbox_v3);
         if (isMeat){
@@ -102,9 +104,19 @@ public class MainActivity extends Activity implements AdapterView.OnItemSelected
 
 
     public void createCB(String[] array){
-
+        Log.i("createCB", "creating");
+        for (int i = 1; i < array.length; i++){
+            CheckBox newCB = new CheckBox(this);
+            newCB.setText(array[i]);
+            ll.addView(newCB);
+        }
     }
 
+    public void createTV(String text){
+        TextView newText = new TextView(this);
+        newText.setText(text);
+        ll.addView(newText);
+    }
     // setText calls calculate. Gets called whenever anything changes with
     // spinner or checkboxes
     public void setText(){
